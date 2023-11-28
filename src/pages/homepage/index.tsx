@@ -1,10 +1,16 @@
-import { Container } from "./styles";
+import React from 'react';
+import { View } from 'react-native';
+import Header from '../../components/header';
+import SearchBar from '../../components/searchbar';
+import Footer from '../../components/footer';
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
-    <>
-      <Container />
-    </>
+    <View>
+      <Header />
+      <SearchBar />
+      <Footer />
+    </View>
   );
 };
 
