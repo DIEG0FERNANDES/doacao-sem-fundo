@@ -4,7 +4,7 @@ import { HeaderContainer, Title } from './styles';
 const Header: React.FC = () => {
   return (
     <HeaderContainer>
-      <Title>Seu Aplicativo</Title>
+      <Title>Doação sem fundo</Title>
     </HeaderContainer>
   );
 };
