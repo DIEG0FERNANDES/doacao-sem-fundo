@@ -1,57 +1,101 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
-// importação de components personalizados
 import Header from '../../components/header';
 import SearchBar from '../../components/searchbar';
 import Footer from '../../components/footer';
 import Card from '../../components/card';
 
-
-
 const ViewCard = () => {
-  const organizationData = {
-    // imageSource: require('../../../assets/organization.png'),
-    description: 'Descrição da organização...',
+  const navigation = useNavigation();
+
+  const [snackData, setSnackData] = useState({
+    name: '',
+    description: '',
+    photoUrl: '',
+    // ... other snack-related data
+  });
+
+  const fetchSnackData = async () => {
+    // Replace with your actual logic to fetch snack data
+    setSnackData({
+      name: 'Snack Name',
+      description: 'Description of the snack...',
+      photoUrl: 'path/to/photo.jpg',
+      // ... other snack-related data
+    });
   };
 
-  const donationData = [
-    {
-      id: 1,
-      // imageSource: require('../../../assets/donation1.png'),
-      title: 'Doação 1',
-      subtitle: 'Subtitulo da Doação 1',
-      description: 'Descrição da Doação 1...',
-    },
-    {
-      id: 2,
-      // imageSource: require('../../../assets/donation2.png'),
-      title: 'Doação 2',
-      subtitle: 'Subtitulo da Doação 2',
-      description: 'Descrição da Doação 2...',
-    },
-  ];
+  const uploadPhoto = async (file) => {
+    // Replace with your actual logic for photo upload
+    try {
+      // Your upload logic here
+      console.log('Photo uploaded successfully.');
+    } catch (error) {
+      console.error('Error uploading photo:', error);
+    }
+  };
+
+  const deletePhoto = async () => {
+    // Replace with your actual logic for photo deletion
+    try {
+      // Your deletion logic here
+      console.log('Photo deleted successfully.');
+      setSnackData((prevData) => ({ ...prevData, photoUrl: '' }));
+    } catch (error) {
+      console.error('Error deleting photo:', error);
+    }
+  };
+
+  const updateSnack = async () => {
+    // Replace with your actual logic for updating snack
+    try {
+      // Your update logic here
+      console.log('Snack updated successfully.');
+    } catch (error) {
+      console.error('Error updating snack:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchSnackData();
+  }, []); // Ensure to add any dependencies if needed
 
   return (
     <View>
       <Header />
       <SearchBar />
+
       <Card
-         //imageSource={organizationData.imageSource}
-        title="Organização"
+        title={snackData.name}
         subtitle=""
-        description={organizationData.description}
+        description={snackData.description}
+        imageSource={snackData.photoUrl ? { uri: snackData.photoUrl } : null}
       />
-      {donationData.map((donation) => (
-        <Card
-          key={donation.id}
-          //imageSource={donation.imageSource}
-          title={donation.title}
-          subtitle={donation.subtitle}
-          description={donation.description}
-        />
-      ))}
+
+      <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+        <Text>Go to Home</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => uploadPhoto(/* pass your file */)}>
+        <Text>Upload Photo</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={deletePhoto}>
+        <Text>Delete Photo</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={updateSnack}>
+        <Text>Update Snack</Text>
+      </TouchableOpacity>
+
+      <Card
+        title="Clothing Donation"
+        subtitle="Donate clothes to those in need"
+        description="Help make a difference by donating gently-used clothes. Your contribution can bring warmth and comfort to someone in need."
+        // You can add an image source for the clothing donation card
+      />
+
       <Footer />
     </View>
   );
