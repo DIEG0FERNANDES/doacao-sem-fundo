@@ -1,17 +1,21 @@
 // Home.tsx
 import React from 'react';
-import { Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Body, Container } from './styles';
-import Card from '../../components/card';
 
+
+// importação de components
+import Header from '../../components/header';
+import SearchBar from '../../components/searchbar';
+import Footer from '../../components/footer';
+import Card from '../../components/card';
 
 const Home: React.FC = () => {
   const navigation = useNavigation();
 
   const navigateToViewCard = () => {
     console.log('Antes da navegação');
-    navigation.navigate('ViewCard');
+    // navigation.navigate('ViewCard');
     console.log('Depois da navegação');
   };
   
@@ -25,12 +29,15 @@ const Home: React.FC = () => {
       description: 'Descrição do Card 1...',
     },
   ];
-
+  // onPress={navigateToViewCard}
   return (
     <Body>
+      <Header />
       <Container>
-        <Button title="Ir para ViewCard" onPress={navigateToViewCard} />
-        {cardData.map((card) => (
+        {/* <Button title="Ir para ViewCard"  /> */}
+
+        <SearchBar />
+        {/* {cardData.map((card) => (
           <Card
             key={card.id}
             imageSource={card.imageSource}
@@ -38,8 +45,9 @@ const Home: React.FC = () => {
             subtitle={card.subtitle}
             description={card.description}
           />
-        ))}
+        ))} */}
       </Container>
+      <Footer />
     </Body>
   );
 };

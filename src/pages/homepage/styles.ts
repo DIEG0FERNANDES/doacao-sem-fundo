@@ -3,15 +3,10 @@ import styled from "styled-components/native";
 export const Body = styled.View`
   background-color: #013C47;
   flex: 1;
-  margin: 30px;
-  padding: 20px;
 `
 
 export const Container = styled.View`
-  background-color: #025E70;
   flex: 1;
-  padding: 30px;
-  margin: auto;
 `;
 
 export const SearchHome = styled.View`

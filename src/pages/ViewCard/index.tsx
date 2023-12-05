@@ -12,21 +12,21 @@ import Card from '../../components/card';
 
 const ViewCard = () => {
   const organizationData = {
-    imageSource: require('../../../assets/organization.png'),
+    // imageSource: require('../../../assets/organization.png'),
     description: 'Descrição da organização...',
   };
 
   const donationData = [
     {
       id: 1,
-      imageSource: require('../../../assets/donation1.png'),
+      // imageSource: require('../../../assets/donation1.png'),
       title: 'Doação 1',
       subtitle: 'Subtitulo da Doação 1',
       description: 'Descrição da Doação 1...',
     },
     {
       id: 2,
-      imageSource: require('../../../assets/donation2.png'),
+      // imageSource: require('../../../assets/donation2.png'),
       title: 'Doação 2',
       subtitle: 'Subtitulo da Doação 2',
       description: 'Descrição da Doação 2...',
@@ -38,7 +38,7 @@ const ViewCard = () => {
       <Header />
       <SearchBar />
       <Card
-        imageSource={organizationData.imageSource}
+        // imageSource={organizationData.imageSource}
         title="Organização"
         subtitle=""
         description={organizationData.description}
@@ -46,7 +46,7 @@ const ViewCard = () => {
       {donationData.map((donation) => (
         <Card
           key={donation.id}
-          imageSource={donation.imageSource}
+          // imageSource={donation.imageSource}
           title={donation.title}
           subtitle={donation.subtitle}
           description={donation.description}
