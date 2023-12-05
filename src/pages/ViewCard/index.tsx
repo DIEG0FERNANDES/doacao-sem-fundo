@@ -38,7 +38,7 @@ const ViewCard = () => {
       <Header />
       <SearchBar />
       <Card
-        // imageSource={organizationData.imageSource}
+         //imageSource={organizationData.imageSource}
         title="Organização"
         subtitle=""
         description={organizationData.description}
@@ -46,7 +46,7 @@ const ViewCard = () => {
       {donationData.map((donation) => (
         <Card
           key={donation.id}
-          // imageSource={donation.imageSource}
+          //imageSource={donation.imageSource}
           title={donation.title}
           subtitle={donation.subtitle}
           description={donation.description}
