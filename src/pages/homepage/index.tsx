@@ -1,13 +1,21 @@
+// Home.tsx
 import React from 'react';
-
-// importação de components
-import Header from '../../components/header';
-import SearchBar from '../../components/searchbar';
-import Footer from '../../components/footer';
-import Card from '../../components/card';
+import { Button } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { Body, Container } from './styles';
+import Card from '../../components/card';
+
 
 const Home: React.FC = () => {
+  const navigation = useNavigation();
+
+  const navigateToViewCard = () => {
+    console.log('Antes da navegação');
+    navigation.navigate('ViewCard');
+    console.log('Depois da navegação');
+  };
+  
+
   const cardData = [
     {
       id: 1,
@@ -20,9 +28,8 @@ const Home: React.FC = () => {
 
   return (
     <Body>
-      <Header />
       <Container>
-        <SearchBar />
+        <Button title="Ir para ViewCard" onPress={navigateToViewCard} />
         {cardData.map((card) => (
           <Card
             key={card.id}
@@ -33,7 +40,6 @@ const Home: React.FC = () => {
           />
         ))}
       </Container>
-      <Footer />
     </Body>
   );
 };

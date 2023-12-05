@@ -1,10 +1,10 @@
 import React from 'react';
-import { HeaderContainer, Title } from './styles';
+import { HeaderContainer, HeaderTitle } from './styles';
 
 const Header: React.FC = () => {
   return (
     <HeaderContainer>
-      <Title>Doação sem fundo</Title>
+      <HeaderTitle>Doação sem fundo</HeaderTitle>
     </HeaderContainer>
   );
 };
