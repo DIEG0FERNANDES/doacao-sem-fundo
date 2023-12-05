@@ -37,7 +37,7 @@ const Home: React.FC = () => {
         {/* <Button title="Ir para ViewCard"  /> */}
 
         <SearchBar />
-        {/* {cardData.map((card) => (
+        {cardData.map((card) => (
           <Card
             key={card.id}
             imageSource={card.imageSource}
@@ -45,7 +45,7 @@ const Home: React.FC = () => {
             subtitle={card.subtitle}
             description={card.description}
           />
-        ))} */}
+        ))}
       </Container>
       <Footer />
     </Body>
