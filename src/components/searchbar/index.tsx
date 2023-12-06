@@ -1,11 +1,15 @@
 import React from 'react';
-import { TextInput, Button } from 'react-native';
+import { Button } from 'react-native';
 import { Bar, Container } from './styles';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 const SearchBar: React.FC = () => {
   return (
     <Container>
-      <Bar placeholder="Pesquisar..." />
+      <Bar>
+        <FontAwesomeIcon icon={faMagnifyingGlass} />
+      </Bar>
       <Button title="Filtrar" onPress={() => {}} />
     </Container>
   );

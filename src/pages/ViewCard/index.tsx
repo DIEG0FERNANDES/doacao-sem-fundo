@@ -5,6 +5,7 @@ import Header from '../../components/header';
 import SearchBar from '../../components/searchbar';
 import Footer from '../../components/footer';
 import Card from '../../components/card';
+import { Description, Photo } from './styles';
 
 const ViewCard = () => {
   const navigation = useNavigation();
@@ -64,37 +65,11 @@ const ViewCard = () => {
   return (
     <View>
       <Header />
-      <SearchBar />
 
-      <Card
-        title={snackData.name}
-        subtitle=""
-        description={snackData.description}
-        imageSource={snackData.photoUrl ? { uri: snackData.photoUrl } : null}
-      />
-
-      <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-        <Text>Go to Home</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity onPress={() => uploadPhoto(/* pass your file */)}>
-        <Text>Upload Photo</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity onPress={deletePhoto}>
-        <Text>Delete Photo</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity onPress={updateSnack}>
-        <Text>Update Snack</Text>
-      </TouchableOpacity>
-
-      <Card
-        title="Clothing Donation"
-        subtitle="Donate clothes to those in need"
-        description="Help make a difference by donating gently-used clothes. Your contribution can bring warmth and comfort to someone in need."
-        // You can add an image source for the clothing donation card
-      />
+      <Container>
+        <Photo></Photo>
+        <Description></Description>
+      </Container>
 
       <Footer />
     </View>

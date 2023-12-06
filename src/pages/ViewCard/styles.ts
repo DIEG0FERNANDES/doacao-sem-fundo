@@ -14,6 +14,14 @@ export const Container = styled.View`
   margin: auto;
 `;
 
+export const Photo = styled.View`
+  background-color: red;
+`
+
+export const Description = styled.View`
+  background-color: blue;
+`
+
 export const SearchView = styled.View`
   height: 20px;
   width: 15px;

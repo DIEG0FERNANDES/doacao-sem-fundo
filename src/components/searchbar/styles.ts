@@ -7,14 +7,19 @@ export const Container = styled.View`
 `;
 
 export const Bar = styled.TextInput`
-  background-color: #b9C4D4;
+  background-color: #038099;
   margin-top: auto;
   padding: 5px;
-  width: 50%;
-  height: 30px;
-  border-radius: 20px;
+  width: 180px;
+  height: 35px;
+  border: none;
+  border-radius: 20px ;
   color: #fff;
 `;
+
+export const LogoFalsa = styled.View`
+background-color: white;
+`
 
 export const Span = styled.Text`
   padding: 10px;
@@ -25,7 +30,7 @@ export const Span = styled.Text`
 export const Search = styled.TouchableOpacity`
   padding: 10px;
   align-items: center;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   margin-top: auto;
   background-color: #038099;
 `;
