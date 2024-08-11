@@ -1,0 +1,1 @@
+Este projeto foi criado em sala de aula na matéria dispositivos moóveis 2, com o objetivo de criar o aplicativo doações sem fundo, visando a quem mais precisa na comunidade
